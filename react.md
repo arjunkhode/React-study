@@ -45,3 +45,8 @@ Flicker in input when max length is reached:
 	- The system knows at a higher level in the hierarchy that the new length is invalid. So the input responds to the event only after it has been computed by the JS, so the input never flickers.
 	- This is just like how a mobile operates. When you touch, the kernel handles it first, then figures out the co-ordinates, then the application that was open and then handle the event.
 	- Everything in React is synthetic. The events are fake, the DOM is fake.
+	- One small read, a lot many writes. Performs well in the DOM.
+	- Checks the minimal set of mutations possible.
+	- Wouldn't the size of the virtual DOM be large? Not really, JS objects are small. It is the render that takes the space, which is called only after the minimal set is computer.
+	- They capture bubble events and form the structure of the synthetic DOM.
+	- React is completely detached from the DOM. Has a React root. Has a tree.
